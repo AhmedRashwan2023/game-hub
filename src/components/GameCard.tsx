@@ -10,7 +10,6 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-  console.log("object: ", game);
   return (
     <GameCardContainer>
       <Card>
