@@ -2,6 +2,7 @@ import React from "react";
 import apiClient from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 import { Genre } from "./useGenres";
+import { Platform } from "./usePlatforms";
 
 interface FetchData<T> {
   count: number;
@@ -11,12 +12,12 @@ interface FetchData<T> {
 const useData = <T>(
   endpoint: string,
   requestConfig?: AxiosRequestConfig,
-  dep?: Genre | null
+  dep?: Genre | Platform | null
 ) => {
   const [data, setData] = React.useState<T[]>([]);
   const [error, setError] = React.useState("");
   const [isLoading, setLoading] = React.useState(false);
-
+  console.log("object", dep);
   React.useEffect(() => {
     const controller = new AbortController();
     setLoading(true);
@@ -39,7 +40,6 @@ const useData = <T>(
 
     return () => controller.abort();
   }, [dep]);
-  console.log(data, "DATA");
   return { data, error, isLoading };
 };
 
