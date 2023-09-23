@@ -16,7 +16,6 @@ const useData = <T>(
   const [data, setData] = React.useState<T[]>([]);
   const [error, setError] = React.useState("");
   const [isLoading, setLoading] = React.useState(false);
-  console.log("object", dep);
   React.useEffect(() => {
     const controller = new AbortController();
     setLoading(true);
