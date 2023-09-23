@@ -9,7 +9,7 @@ export interface Game {
   metacritic: number;
 }
 
-interface Platforms {
+export interface Platforms {
   platform: {
     id: number;
     name: string;
