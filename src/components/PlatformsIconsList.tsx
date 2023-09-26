@@ -2,12 +2,11 @@ import * as reactFA from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo, SiMacos } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { Platforms } from "../hooks/useGames";
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 interface Props {
-  platform: Platforms[];
+  platform: any[];
 }
 const PlatformsIconsList = ({ platform }: Props) => {
   const iconMap: { [key: string]: IconType } = {
